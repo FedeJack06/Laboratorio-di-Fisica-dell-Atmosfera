@@ -17549,15 +17549,9 @@ Inizio validità (UTC),Fine validità (UTC),Velocita' media oraria scalare del v
 2016-12-31 22:00:00+00:00,2016-12-31 23:00:00+00:00,2.9
 2016-12-31 23:00:00+00:00,2017-01-01 00:00:00+00:00,3.0
 
-Bologna urbana
-Inizio validità (UTC),Fine validità (UTC),Direzione prevalente oraria del vento a 10 m dal suolo (DEGREE TRUE)
-
-
-
 Nome della stazione,Rete di misura,Comune,Provincia,Regione,Nazione,Altezza (Metri sul livello del mare),Longitudine (Gradi Centesimali),Latitudine (Gradi Centesimali),Bacino
 Bologna urbana,urbane,BOLOGNA,BOLOGNA,EMILIA-ROMAGNA,ITALY,78.0,11.328789,44.500754,NAVILE - SAVENA ABBANDONATO
 
 
 Nome della variabile,Unita' di misura
-Direzione prevalente oraria del vento a 10 m dal suolo,DEGREE TRUE
 Velocita' media oraria scalare del vento a 10 m dal suolo,M/S
