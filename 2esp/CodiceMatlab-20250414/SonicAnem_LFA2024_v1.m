@@ -18,8 +18,8 @@ tic;
 %%
 %cd('C:\Users\LSL\Documents\UNIBO\Didattica\');  % type in working directory
 
-filenameSonic='TOA5_6550_sonic_data_7.dat'; %type in the name of the file containing the sonic data  
-filenameHygrometer='TOA5_6550_slow_data_7.dat';  %type in the name of the file containing the thermohygrometer data  
+filenameSonic='Dati_di_prova/TOA5_6550_sonic_data_5.dat'; %type in the name of the file containing the sonic data  
+filenameHygrometer='Dati_di_prova/TOA5_6550_slow_data_5.dat';  %type in the name of the file containing the thermohygrometer data  
 
 mn = input('Define the averaging window in seconds: ');
 
@@ -30,7 +30,10 @@ end
 %% ------------- SONIC DATA (u,v,w,Ts)---------------------------------
 
 %% Open and scan the Sonic .dat file (comma separated)
-fid = fopen(filenameSonic,'rt');    
+fid = fopen(filenameSonic,'rt');
+if fid < 0
+    error('Could not open');
+end    
 
 dataSonic = textscan(fid,'%s %f %f %f %f %f','Delimiter',',','HeaderLines',4);
 fclose(fid);
@@ -264,7 +267,7 @@ elseif mn==1   %NO AVERAGE
 end
 
 %% Import  Liquid-in-Glass T readings 
-M = readmatrix('TermLiq.xlsx');  %import Dataset
+M = readmatrix('Dati_di_prova/TermLiq.xlsx');  %import Dataset
 s=size(M,1); %number of rows
 DateTime_liq=datenum([t1(1:3).*ones(s,1),M(:,1:2),zeros(s,1)]); %reconstruc DateTime matrix and convert it into serial date number (Matlab time format)
 T_liq=M(:,3); %extract temperature colon
@@ -325,3 +328,4 @@ ax.FontSize = 12;
 title(['MovingAverage=', num2str(mn),'s']);
 %%
 toc;
+set(findall(gcf,'-property','FontSize'),'FontSize',18)
